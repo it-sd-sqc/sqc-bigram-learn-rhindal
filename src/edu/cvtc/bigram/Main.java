@@ -128,6 +128,8 @@ public class Main {
   // TODO: Identify a bug in at least one of the following methods,
   // and then create a unit test for the bug that fails.
 
+
+
   // Convenience function that takes an open non-null database connection
   // and a source string from which to extract bigrams. Words are defined
   // as non-whitespace characters separated by whitespace. As such,
@@ -151,11 +153,13 @@ public class Main {
     }
   } // end of createBigrams
 
+
+
   // Creates a bigram in the provided database for the provided word ids.
   // The provided word ids are assumed to indicate valid words to improve
   // efficiency; as such, they are only required to be greater than zero.
   // Use getId() to identify a word's ID in the provided database.
-  public static void addBigram(Connection db, int w0, int w1) throws SQLException {
+  public static void addBigram(Connection db, int w0, int w1) throws SQLException {  ///
     if (db == null || db.isClosed() || w0 < 1 || w1 < 1) {
       return;
     }
@@ -166,6 +170,7 @@ public class Main {
         w0, w1);
     command.execute(query);
   } // end of addBigram
+
 
   // Returns the ID of the provided word. Words must consist of non-whitespace
   // characters, and any leading or trailing whitespace will be removed. The
